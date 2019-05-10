@@ -69,11 +69,11 @@ header nav a:hover{
 	flex-direction: row ;/*row, column, row-reverse,column-reverse*/
 	justify-content:space-around; /*flex-start, center, flex-end, space-between, SPACE AROUND*/
 	align-items: center ;
-	border-bottom: solid; 1px #CCC;
+	border-bottom: solid 1px #CCC;
 	margin-left: 20px;
 	margin-right: 20px;
 }
-.noticia:last-child{
+.noticia:last-child {
 	border:none;
 	/*background-color:red;*/
 }
