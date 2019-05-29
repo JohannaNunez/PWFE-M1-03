@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf8">
+		<title>Kiosko "El JeviScript"</title>
+		<link rel="stylesheet" href="https://docs.google.com/uc?id=17C6A6tYbFc9esDbgo0Q-HjN2rNjvXbyc">
+	</head>
+	<body>
+		<h1>Kiosko <strong>El JeviScript</strong></h1>
+
+		<button>Nuevo Producto +</button>
+
+		<table>
+			<thead>
+				<tr>
+					<th>Nombre</th>
+					<th>Stock</th>
+					<th>Precio</th>
+					<th>Disponible</th>
+				</tr>
+			</thead>
+			<tbody id="productos">
+				<!-- ACÁ TIENEN QUE APARECER LOS PRODUCTOS -->
+			</tbody>
+		</table>
+
+		<script>
+			document.querySelector("button").onclick = cargarProducto
+
+			function cargarProducto(){
+				/**** Inicio cargarProducto() ****/
+
+				/* Introdccion */
+				let nombre = prompt("Ingrese nombre:")       //<-- String: Valores Alfanuméricos
+				let stock = prompt("Ingrese stock:")         //<-- Int: Números Enteros
+				let precio = prompt("Ingrese precio:")       //<-- Float: Números con Decimales
+				let disponible = confirm("Esta disponible?") //<-- Bool: Valores true/false
+
+				/* Nudo */
+				if( nombre == "" ){
+
+					alert("ERROR: El nombre no puede quedar vacio...")
+
+					return
+				}
+
+				let precioFinal = precio * 1.21
+
+				/* Desenlace */
+				let msg = `<p>El producto <strong>${nombre}</strong> vale ARS ${precioFinal} la unidad</p>` //<-- Template String
+
+				document.querySelector("#productos").insertAdjacentHTML("beforeend", msg)
+
+				/**** Fin cargarProducto() ****/
+			}
+		</script>
+	</body>
+</html>
