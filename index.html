@@ -215,7 +215,7 @@
         let ajax = new XMLHttpRequest()
         ajax.open ("GET", "noticias.json")
         ajax.onload = function(){
-          if( ajx.status  == 200 ){ // Respuesta exitosa
+          if( ajax.status  == 200 ){ // Respuesta exitosa
             console.log( ajax.response)
         }
       }
