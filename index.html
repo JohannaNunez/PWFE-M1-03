@@ -191,20 +191,35 @@
           // 2) Manipulacion de estructura
           logo.style.color = "green"
           logo.style.fontSize = "32px"
-          logo.classList.add("bg-light)
+          logo.classList.add("bg-light")
           logo.title = "Esto lo puso JS"
         //Fin cambiar logo
       }
 
       function validarOpcion(evento){
-
+        event.preventDefault()
         let clickeado = evento.target;
+
+        console.log("el parámetro mágico es:")
+        console.log(evento)
 
         let rta = confirm(`¿Esta seguro que desea ir a ${clickeado.innerText}?`)
 
         if( rta ) {
           alert( "Ok, buen viaje..")
+          window.location(clickeado.href)
         } 
+      }
+
+      function obtenerNoticias(){
+        let ajax = new XMLHttpRequest()
+        ajax.open ("GET", "noticias.json")
+        ajax.onload = function(){
+          if( ajx.status  == 200 ){ // Respuesta exitosa
+            console.log( ajax.response)
+        }
+      }
+        ajax.send ()
       }
 
   </script>
